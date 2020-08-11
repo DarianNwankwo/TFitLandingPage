@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="/stylesheets/technicallyfit/workout.css")
+        title Workouts
+    body
+        <div class="wrapper">
+        
+        // WORKOUT
+        each workout in workouts
+            <div class="table">
+                
+                div(class="row header")
+                    .cell= workout.day + "'s Exercises"  + " (" + workout.category + ")"
+                    .cell Sets
+                    .cell Reps
+                    .cell Rest                
+                
+                each exercise in workout.exercise
+                    .row
+                        .cell(data-title="Exercise")= exercise[0]
+                        .cell(data-title="Sets")= exercise[1]
+                        .cell(data-title="Reps")= exercise[2]
+                        .cell(data-title="Rest")= exercise[3]
+            
+            </div>
+                        
+        </div>
